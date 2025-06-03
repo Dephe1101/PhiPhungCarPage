@@ -1,139 +1,134 @@
+import React, { useState, useEffect } from 'react';
+import {
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    TextField,
+    Button,
+    Box,
+    Avatar
+} from '@mui/material';
+import { Toast } from 'bootstrap';
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { API_URL } from '../../../config';
+import { toast } from 'react-toastify';
 
-export default function Form() {
-    const dispatch = useDispatch()
-    const carList = useSelector(state => state.CarReducers)
-    console.log('demo', carList.carList);
-    const [state, setState] = useState({
-        tenSP: '',
-        giaTien: '',
+export default function Form({ open, onClose, onSave, initialData }) {
+    // initialData: đối tượng để edit, hoặc null để thêm mới
+
+    const [formData, setFormData] = useState({
         hinhAnh: '',
+        tenSP: '',
         loai: '',
+        giaTien: '',
         mucdohienthi: '',
+        id: '',
+    });
 
-    })
+    useEffect(() => {
+        if (initialData) {
+            setFormData(initialData);
+        } else {
+            // reset khi thêm mới
+            setFormData({
+                hinhAnh: '',
+                tenSP: '',
+                loai: '',
+                giaTien: '',
+                mucdohienthi: '',
+                id: '',
+            });
+        }
+    }, [initialData, open]);
 
     const handleChange = (e) => {
-        let { value, name } = e.target
-        // console.log({ value, name });
-        setState({
-            ...state,
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
             [name]: value
-        })
-    }
+        }));
+    };
+
+    const handleSubmit = async (buttonText) => {
+        if (buttonText === 'Lưu') {
+            onSave(formData);
+        } else if (buttonText === 'Thêm') {
+            try {
+                console.log(formData);
+                const response = await axios.post(`${API_URL}`, formData);
+                toast.success("Thêm sản phẩm thành công");
 
 
-    const sendItem = (e) => {
-        e.preventDefault()
-        if (state.tenSP === "" || state.loai === "") {
-            return alert("Tên SP và loại SP không được để trống")
+            } catch (error) {
+                console.error("Error for", error);
+                toast.error("Thêm sản phẩm thất bại");
+
+            }
+
         } else {
-            let promise = axios({
-                url: API_URL,
-                method: "POST",
-                data: state
-            })
-            promise.then(alert("Tạo sản phảm thành công")).catch("Tạo sản phẩm thất bại")
+            Toast.error('Unknown action');
         }
-    }
 
-    const renderDemoReducers = () => {
-        return carList.carList.map((item, index) => {
-            return <div className='col-3'>
-                <div className="card text-start">
-                    <img className="card-img-top" src={item.hinhAnh} alt="Title" />
-                    <div className="card-body">
-                        <h4 className="card-title">{item.tenSP}</h4>
-                        <h4 className="card-title">{item.loai}</h4>
-                        <h4 className="card-title">{item.giaTien}</h4>
-                        <h4 className="card-title">{item.content}</h4>
-                    </div>
-                </div>
-            </div>
-        })
-    }
 
-    console.log(state);
+
+    };
 
     return (
-        <div>
-            <section className="vh-100 gradient-custom">
-                <div className="container py-5 h-100">
-                    <div className="row justify-content-center align-items-center h-100">
-                        <div className="col-12 col-lg-9 col-xl-7">
-                            <div className="card shadow-2-strong card-registration" style={{ borderRadius: 15 }}>
-                                <div className="card-body p-4 p-md-5">
-                                    <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-                                    <form>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-4">
-                                                <div className="form-outline">
-                                                    <label className="form-label" htmlFor="firstName"  >TenSP</label>
-                                                    <input onChange={handleChange} name='tenSP' type="text" id="firstName" className="form-control form-control-lg" required />
-
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 mb-4">
-                                                <div className="form-outline">
-                                                    <label className="form-label" htmlFor="firstName"  >GiamGia</label>
-                                                    <input onChange={handleChange} name='giamGia' type="text" id="firstName" className="form-control form-control-lg" required />
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-4 d-flex align-items-center">
-                                                <div className="form-outline datepicker w-100">
-                                                    <label htmlFor="birthdayDate" className="form-label">Gia Tien</label>
-                                                    <input onChange={handleChange} name='giaTien' type="text" className="form-control form-control-lg" id="birthdayDate" />
-
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 mb-4 d-flex align-items-center">
-                                                <div className="form-outline datepicker w-100">
-                                                    <label htmlFor="birthdayDate" className="form-label">Hinh Anh</label>
-                                                    <input onChange={handleChange} name='hinhAnh' required type="text" className="form-control form-control-lg" id="birthdayDate" />
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-4 pb-2">
-                                                <div className="form-outline">
-                                                    <label className="form-label" htmlFor="emailAddress">Loai</label>
-                                                    <input onChange={handleChange} name='loai' type="email" id="emailAddress" className="form-control form-control-lg" />
-
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 mb-4 pb-2">
-                                                <div className="form-outline">
-                                                    <label className="form-label" htmlFor="phoneNumber">Muc Do Hien Thi</label>
-                                                    <input onChange={handleChange} name='mucdohienthi' type="tel" id="phoneNumber" className="form-control form-control-lg" />
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="mt-4 pt-2">
-                                            <button className='btn btn-primary' type='submit' onClick={sendItem}>Send</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div className='container'>
-                    <div className='row'>
-                        {renderDemoReducers()}
-                    </div>
-                </div>
-            </section>
-        </div>
-    )
+        <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+            <DialogTitle>{initialData ? 'Chỉnh sửa sản phẩm' : 'Thêm mới sản phẩm'}</DialogTitle>
+            <DialogContent>
+                <Box component="form" noValidate autoComplete="off" sx={{ mt: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <TextField
+                        label="Image URL"
+                        name="hinhAnh"
+                        value={formData.hinhAnh}
+                        onChange={handleChange}
+                        fullWidth
+                    />
+                    <TextField
+                        label="Tên Sản Phẩm"
+                        name="tenSP"
+                        value={formData.tenSP}
+                        onChange={handleChange}
+                        fullWidth
+                    />
+                    <TextField
+                        label="Loại Sản Phẩm"
+                        name="loai"
+                        value={formData.loai}
+                        onChange={handleChange}
+                        fullWidth
+                    />
+                    <TextField
+                        label="Giá Tiền"
+                        name="giaTien"
+                        value={formData.giaTien}
+                        onChange={handleChange}
+                        type="number"
+                        fullWidth
+                    />
+                    <TextField
+                        label="Mức độ hiển thị"
+                        name="mucdohienthi"
+                        value={formData.mucdohienthi}
+                        onChange={handleChange}
+                        fullWidth
+                    />
+                    <TextField
+                        label="Key"
+                        name="id"
+                        value={formData.id}
+                        onChange={handleChange}
+                        disabled={true}  // không cho sửa id khi edit
+                        fullWidth
+                    />
+                </Box>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={onClose}>Cancel</Button>
+                <Button variant="contained" onClick={(e) => handleSubmit(e.currentTarget.textContent)}>{initialData ? 'Lưu' : 'Thêm'}</Button>
+            </DialogActions>
+        </Dialog>
+    );
 }

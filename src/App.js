@@ -12,6 +12,8 @@ import GioiThieu from './CarShop/PAGE/GioiThieu/GioiThieu';
 import CameraPage from './CarShop/PAGE/Camera/CameraPage';
 import Den from './CarShop/PAGE/Den/Den';
 import Table from './CarShop/PAGE/TABLE/Table';
+import Register from './CarShop/Component/REGISTER/Register';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -26,7 +28,8 @@ function App() {
         <Route path='/home' Component={CarShop} />
         <Route path='/table' Component={Table} />
         <Route path='/detail/:id' Component={MoreItem} />
-        <Route path='/register' Component={Form} />
+        <Route path='/register' Component={Register} />
+        <Route path='/form' Component={Form} />
         <Route exact path='*' Component={PageNotFound} />
         <Route exact path='/manhinh' Component={() => {
           return <div>
@@ -64,7 +67,7 @@ function App() {
         }} /> */}
 
       </Routes>
-
+      <ToastContainer />
     </BrowserRouter >
   );
 }

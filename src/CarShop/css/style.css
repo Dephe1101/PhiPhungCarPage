@@ -10,6 +10,9 @@ body {
   color: white;
 }
 
+p {
+  margin: 0;
+}
 .line::after {
   content: "";
   width: 0;
