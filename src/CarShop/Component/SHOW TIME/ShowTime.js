@@ -71,8 +71,8 @@ export default function ShowTime() {
         handelItem()
     }, [])
 
-    const renderManHinh = () => {
-        return state.list.filter(product => product.loai === 'phutung').slice(0, 8).map((item, index) => {
+    const renderPhuTung = () => {
+        return state.list.filter(product => product.loai === 'phutung' && product.mucdohienthi === "product").slice(0, 8).map((item, index) => {
             return <div className="mt-1 p-2 col-md-3 col-4" >
                 <div className='card__custom__img' >
                     <img src={item.hinhAnh} className="card-img-top img-fluid" alt="..." style={{ width: '100%', height: "100%" }} />
@@ -86,8 +86,8 @@ export default function ShowTime() {
 
         })
     }
-    const renderAndroid = () => {
-        return state.list.filter(product => product.loai === 'nhot').map((item, index) => {
+    const renderPhuKien = () => {
+        return state.list.filter(product => product.loai === 'phukien' && product.mucdohienthi === "product").map((item, index) => {
             return <div className="mt-1 p-2 col-md-3 col-4" key={index}>
                 <div className='card__custom__img' >
                     <img src={item.hinhAnh} className="card-img-top img-fluid" alt="..." style={{ width: '100%', height: "100%" }} />
@@ -102,7 +102,7 @@ export default function ShowTime() {
         })
     }
     const renderdetailing = () => {
-        return state.list.filter(product => product.loai === 'detail').map((item, index) => {
+        return state.list.filter(product => product.loai === 'detail' && product.mucdohienthi === "product").map((item, index) => {
             return <div className="mt-1 p-2 col-md-3 col-4" key={index}>
                 <div className='card__custom__img'>
                     <img src={item.hinhAnh} className="card-img-top img-fluid" alt="..." style={{ width: '100%', height: "100%" }} />
@@ -115,8 +115,8 @@ export default function ShowTime() {
             </div>
         })
     }
-    const renderCamera = () => {
-        return state.list?.filter(product => product.loai === 'dochoi').map((item, index) => {
+    const renderLocNhot = () => {
+        return state.list?.filter(product => product.loai === 'locnhot' && product.mucdohienthi === "product").map((item, index) => {
             return <div className="mt-1 p-2 col-md-3 col-4" key={index}>
                 <div className='card__custom__img'>
                     <img src={item.hinhAnh} className="card-img-top img-fluid" alt="..." style={{ width: '100%', height: "100%" }} />
@@ -129,7 +129,7 @@ export default function ShowTime() {
             </div>
         })
     }
-    const renderCameraHanhTrinh = () => {
+    const renderLocNhotHanhTrinh = () => {
         return state.list.filter(product => product.loai === 'cameraHanhTrinh').map((item, index) => {
             return <div className="mt-1 p-2 col-md-3 col-4" key={index}>
                 <div className='card__custom__img'>
@@ -181,7 +181,7 @@ export default function ShowTime() {
                 <div class="container-md mb-5">
                     <h2 className='title text-center'>PHỤ TÙNG CHÍNH HÃNG</h2>
                     <div className='show__time__item row'>
-                        {renderManHinh()}
+                        {renderPhuTung()}
                     </div>
                     <div className='text-center'>
                         <button className='btn btn-primary'>
@@ -196,7 +196,7 @@ export default function ShowTime() {
                 <div class="container-md mb-5">
                     <h2 className='title text-center'> PHỤ KIỆN ĐỒ CHƠI XE</h2>
                     <div className='show__time__item row'>
-                        {renderCamera()}
+                        {renderLocNhot()}
                     </div>
                     <div className='text-center'>
                         <button className='btn btn-primary'>
@@ -212,7 +212,7 @@ export default function ShowTime() {
                 <div class="container-md mb-5">
                     <h2 className='title text-center'>LỌC VÀ NHỚT</h2>
                     <div className='show__time__item row'>
-                        {renderAndroid()}
+                        {renderPhuKien()}
                     </div>
                     <div className='text-center'>
                         <button className='btn btn-primary'>

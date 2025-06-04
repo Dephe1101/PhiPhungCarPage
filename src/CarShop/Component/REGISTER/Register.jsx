@@ -156,6 +156,7 @@ function EnhancedTableToolbar(props) {
   const { numSelected, arrSelected } = props;
   const [open, setOpen] = React.useState(false);
   const [dataEdit, setDataEdit] = React.useState([]);
+  const [data, setData] = React.useState([]);
 
   const deleteApi = async () => {
     for (const item of arrSelected) {
@@ -163,6 +164,7 @@ function EnhancedTableToolbar(props) {
         if (window.confirm("Bạn có chắc không?")) {
           const response = await axios.delete(`${API_URL}/${item}`);
           toast.success("Xoá thành công");
+          window.location.reload();
         } else {
           return;
         }
@@ -195,6 +197,7 @@ function EnhancedTableToolbar(props) {
       try {
         const response = await axios.put(`${API_URL}/${item}`, data);
         toast.success("Cập nhật thông tin thành công");
+        window.location.reload();
         setDataEdit(response.data);
       } catch (error) {
         console.error("Error for", item, error);
@@ -281,8 +284,8 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function EnhancedTable() {
-  const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("tenSP");
+  const [order, setOrder] = React.useState("desc");
+  const [orderBy, setOrderBy] = React.useState("id");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);

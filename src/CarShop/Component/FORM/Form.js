@@ -7,7 +7,10 @@ import {
     TextField,
     Button,
     Box,
-    Avatar
+    Avatar,
+    InputLabel,
+    Select,
+    MenuItem
 } from '@mui/material';
 import { Toast } from 'bootstrap';
 import axios from 'axios';
@@ -44,10 +47,13 @@ export default function Form({ open, onClose, onSave, initialData }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        console.log(formData);
+
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
+
     };
 
     const handleSubmit = async (buttonText) => {
@@ -55,10 +61,14 @@ export default function Form({ open, onClose, onSave, initialData }) {
             onSave(formData);
         } else if (buttonText === 'Thêm') {
             try {
-                console.log(formData);
-                const response = await axios.post(`${API_URL}`, formData);
-                toast.success("Thêm sản phẩm thành công");
-
+                if (formData.hinhAnh.trim() != "" && formData.tenSP.trim() != "" && formData.loai.trim() != "" && formData.giaTien.trim() != "" && formData.mucdohienthi.trim() != "") {
+                    const response = await axios.post(`${API_URL}`, formData);
+                    toast.success("Thêm sản phẩm thành công");
+                    window.location.reload();
+                } else {
+                    toast.error("Vui lòng điền đầy đủ thông tin");
+                    return;
+                }
 
             } catch (error) {
                 console.error("Error for", error);
@@ -93,13 +103,20 @@ export default function Form({ open, onClose, onSave, initialData }) {
                         onChange={handleChange}
                         fullWidth
                     />
-                    <TextField
-                        label="Loại Sản Phẩm"
-                        name="loai"
+                    <InputLabel id="select-label">Chọn loại sản phẩm</InputLabel>
+                    <Select
+                        labelId="select-label"
+                        id="select"
                         value={formData.loai}
                         onChange={handleChange}
-                        fullWidth
-                    />
+                        name='loai'
+                        label="Chọn loại sản phẩm"
+                    >
+                        <MenuItem value="phutung">Phụ tùng</MenuItem>
+                        <MenuItem value="phukien">Phụ kiện</MenuItem>
+                        <MenuItem value="detail">Detail</MenuItem>
+                        <MenuItem value="locnhot">Lọc nhớt</MenuItem>
+                    </Select>
                     <TextField
                         label="Giá Tiền"
                         name="giaTien"
@@ -108,19 +125,24 @@ export default function Form({ open, onClose, onSave, initialData }) {
                         type="number"
                         fullWidth
                     />
-                    <TextField
-                        label="Mức độ hiển thị"
-                        name="mucdohienthi"
+                    <InputLabel id="select-label">Chọn mức độ hiển thị</InputLabel>
+                    <Select
+                        labelId="select-label"
+                        id="select"
                         value={formData.mucdohienthi}
                         onChange={handleChange}
-                        fullWidth
-                    />
+                        name='mucdohienthi'
+                        label="Chọn loại sản phẩm"
+                    >
+                        <MenuItem value="product">Product</MenuItem>
+                        <MenuItem value="sale">Sale</MenuItem>
+                    </Select>
                     <TextField
                         label="Key"
                         name="id"
                         value={formData.id}
                         onChange={handleChange}
-                        disabled={true}  // không cho sửa id khi edit
+                        disabled={true}
                         fullWidth
                     />
                 </Box>
