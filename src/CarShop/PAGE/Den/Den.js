@@ -32,7 +32,7 @@ export default function Den() {
     const [state, setState] = useState({
         list: []
     });
-    const dataSP = state.list.filter(item => item.loai === 'nhot')
+    const dataSP = state.list.filter(item => item.loai === 'detail')
     const recordsPerPage = 8;
     const lastIndex = currentPage * recordsPerPage;
     const firstIndex = lastIndex - recordsPerPage;
@@ -104,8 +104,7 @@ export default function Den() {
                     <img className="card-img-top" src={item.hinhAnh} alt="Title" />
                     <div className="card-body">
                         <h4 className="card-title">{item.tenSP}</h4>
-                        <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
-                        <p className='text-center' style={{ textDecoration: "line-through", color: "gray" }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
+                        <p className='text-center' >{item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353" style={{ textDecoration: "none" }}>Liên Hệ</a>}</p>
                     </div>
                 </div>
             </div>;

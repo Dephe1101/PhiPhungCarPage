@@ -8,7 +8,7 @@ export default function CameraPage() {
     const [state, setState] = useState({
         list: []
     });
-    const dataSP = state.list.filter(item => item.loai === 'dochoi')
+    const dataSP = state.list.filter(item => item.loai === 'locnhot')
     console.log(dataSP);
     const recordsPerPage = 8;
     const lastIndex = currentPage * recordsPerPage;
@@ -102,8 +102,7 @@ export default function CameraPage() {
                     <img className="card-img-top" src={item.hinhAnh} alt="Title" />
                     <div className="card-body">
                         <h4 className="card-title">{item.tenSP}</h4>
-                        <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
-                        <p style={{ textDecoration: "line-through", color: "gray" }} className="card-text text-center">{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
+                        <p className='text-center' >{item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353" style={{ textDecoration: "none" }}>Liên Hệ</a>}</p>
                     </div>
                 </div>
             </div>;

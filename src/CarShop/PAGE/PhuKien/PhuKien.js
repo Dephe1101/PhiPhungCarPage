@@ -1,9 +1,22 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick';
 import { API_URL } from '../../../config';
 
-export default function ManHinhPage() {
+export default function PhuKienPage() {
+    const [currentPage, setcurrentPage] = useState(1);
+    const [state, setState] = useState({
+        list: []
+    });
+    const dataSP = state.list.filter(item => item.loai === 'phukien')
+    console.log(dataSP);
+    const recordsPerPage = 8;
+    const lastIndex = currentPage * recordsPerPage;
+    const firstIndex = lastIndex - recordsPerPage;
+    const records = dataSP.slice(firstIndex, lastIndex);
+    const npage = Math.ceil(dataSP.length / recordsPerPage)
+    const numbers = [...Array(npage + 1).keys()].slice(1);
+    console.log(numbers);
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -26,22 +39,6 @@ export default function ManHinhPage() {
             />
         );
     }
-
-
-    const [currentPage, setcurrentPage] = useState(1);
-    const [state, setState] = useState({
-        list: []
-    });
-    const dataSP = state.list.filter(item => item.loai === "phutung")
-    const recordsPerPage = 8;
-    const lastIndex = currentPage * recordsPerPage;
-    const firstIndex = lastIndex - recordsPerPage;
-    const records = dataSP.slice(firstIndex, lastIndex);
-    const npage = Math.ceil(dataSP.length / recordsPerPage)
-    const numbers = [...Array(npage + 1).keys()].slice(1);
-    console.log(numbers);
-
-
 
     console.log(state);
 
@@ -105,7 +102,6 @@ export default function ManHinhPage() {
                     <img className="card-img-top" src={item.hinhAnh} alt="Title" />
                     <div className="card-body">
                         <h4 className="card-title">{item.tenSP}</h4>
-                        {/* <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p> */}
                         <p className='text-center' >{item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353" style={{ textDecoration: "none" }}>Liên Hệ</a>}</p>
                     </div>
                 </div>
@@ -177,6 +173,7 @@ export default function ManHinhPage() {
                     </li>
                 </ul>
             </nav>
+
         </section>
     );
 }

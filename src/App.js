@@ -14,6 +14,7 @@ import Den from './CarShop/PAGE/Den/Den';
 import Table from './CarShop/PAGE/TABLE/Table';
 import Register from './CarShop/Component/REGISTER/Register';
 import { ToastContainer } from 'react-toastify';
+import PhuKienPage from './CarShop/PAGE/PhuKien/PhuKien';
 
 
 
@@ -31,7 +32,7 @@ function App() {
         <Route path='/register' Component={Register} />
         <Route path='/form' Component={Form} />
         <Route exact path='*' Component={PageNotFound} />
-        <Route exact path='/manhinh' Component={() => {
+        <Route exact path='/phutung' Component={() => {
           return <div>
 
             <Header />
@@ -40,7 +41,16 @@ function App() {
             <Footer />
           </div>
         }} />
-        <Route exact path='/camera' Component={() => {
+        <Route exact path='/phukien' Component={() => {
+          return <div>
+
+            <Header />
+            <Carousel />
+            <PhuKienPage />
+            <Footer />
+          </div>
+        }} />
+        <Route exact path='/locnhot' Component={() => {
           return <div>
 
             <Header />
@@ -49,7 +59,7 @@ function App() {
             <Footer />
           </div>
         }} />
-        <Route exact path='/den' Component={() => {
+        <Route exact path='/detailing' Component={() => {
           return <div>
             <Header />
             <Carousel />

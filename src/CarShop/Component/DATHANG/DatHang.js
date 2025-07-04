@@ -40,7 +40,7 @@ export default function DatHang() {
 			1 hover-images 			">
                                             <a
                                                 className="relative block overflow-hidden"
-                                                href="https://automize.risingbamboo.com/product/curabitur-ultrices-enim-ut-nunc-commodo-semper-suscipit/"
+                                                href="#"
                                                 tabIndex={0}>
                                                 <img
                                                     loading="lazy"
@@ -49,7 +49,7 @@ export default function DatHang() {
                                                     height={640}
                                                     src={item.hinhAnh}
                                                     className="max-w-full w-full"
-                                                    alt="Curabitur ultrices enim ut nunc commodo semper suscipit"
+                                                    alt="Product Image"
                                                     sizes="(max-width: 640px) 100vw, 640px"
                                                 />
                                             </a>
@@ -57,7 +57,7 @@ export default function DatHang() {
                                         <div className="md:w-1/2 md:py-4 pt-4 pb-6 md:px-5 product_info relative d-flex justify-content-center align-items-center">
                                             <div className="product_info-bottom bg-white pt-3 md:px-0 px-3">
                                                 <a
-                                                    href="https://automize.risingbamboo.com/product/curabitur-ultrices-enim-ut-nunc-commodo-semper-suscipit/"
+                                                    href="#"
                                                     className="product_name block !font-semibold leading-[27px] md:mb-5 mb-2"
                                                     tabIndex={0}>
                                                     {item.tenSP}
@@ -87,10 +87,10 @@ export default function DatHang() {
                                                         }}
                                                     />
                                                 </div>
-                                                <div className="text-[#3f4045] text-[10px] font-bold mt-4 mb-2.5 uppercase">
+                                                {/* <div className="text-[#3f4045] text-[10px] font-bold mt-4 mb-2.5 uppercase">
                                                     <span className="d-inline-block">35% Sold </span>-
                                                     Available: 11{" "}
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
