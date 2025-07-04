@@ -23,6 +23,7 @@ export default function Form({ open, onClose, onSave, initialData }) {
     const [formData, setFormData] = useState({
         hinhAnh: '',
         tenSP: '',
+        maSP: '',
         loai: '',
         giaTien: '',
         mucdohienthi: '',
@@ -100,6 +101,13 @@ export default function Form({ open, onClose, onSave, initialData }) {
                         label="Tên Sản Phẩm"
                         name="tenSP"
                         value={formData.tenSP}
+                        onChange={handleChange}
+                        fullWidth
+                    />
+                    <TextField
+                        label="Mã Sản Phẩm"
+                        name="maSP"
+                        value={formData.maSP}
                         onChange={handleChange}
                         fullWidth
                     />

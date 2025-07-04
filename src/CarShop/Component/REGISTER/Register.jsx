@@ -73,6 +73,12 @@ const headCells = [
     label: "Loại",
   },
   {
+    id: "maSP",
+    numeric: true,
+    disablePadding: false,
+    label: "maSP",
+  },
+  {
     id: "giaTien",
     numeric: true,
     disablePadding: false,
@@ -452,6 +458,9 @@ export default function EnhancedTable() {
                     </TableCell>
                     <TableCell align="right" sx={{ color: "rgba(0,0,0,0.87)" }}>
                       {row.loai}
+                    </TableCell>
+                    <TableCell align="right" sx={{ color: "rgba(0,0,0,0.87)" }}>
+                      {row.maSP}
                     </TableCell>
                     <TableCell align="right" sx={{ color: "rgba(0,0,0,0.87)" }}>
                       {formatter(row.giaTien)}

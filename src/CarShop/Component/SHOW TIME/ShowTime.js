@@ -79,7 +79,8 @@ export default function ShowTime() {
                 </div>
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
-                    <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p>
+                    <p className="card-text">Mã sản phẩm: <span>{item.maSP}</span></p>
+                    {item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353">Liên Hệ</a>}
                     <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
             </div>
@@ -94,7 +95,7 @@ export default function ShowTime() {
                 </div>
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
-                    <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p>
+                    {item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353">Liên Hệ</a>}
                     <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} </p>
 
                 </div>
@@ -109,7 +110,7 @@ export default function ShowTime() {
                 </div>
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
-                    <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p>
+                    {item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353">Liên Hệ</a>}
                     <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} </p>
                 </div>
             </div>
@@ -123,7 +124,7 @@ export default function ShowTime() {
                 </div>
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
-                    <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}  VND</p>
+                    {item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353">Liên Hệ</a>}
                     <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item?.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}     </p>
                 </div>
             </div>

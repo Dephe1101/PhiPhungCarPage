@@ -6,7 +6,7 @@
 
 html,
 body {
-  font-family: "Hind", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
 }
 
@@ -606,13 +606,26 @@ p {
 }
 .card-body :nth-child(1) {
   text-align: center;
-  font-size: 28px;
-  color: #f6b300;
+  font-size: 18px;
+  color: black;
 }
 .card-body :nth-child(2) {
   text-align: center;
-  font-size: 25px;
+  font-size: 18px;
   color: black;
+}
+
+.card-body :nth-child(2) span {
+  text-align: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.644);
+}
+.card-body :nth-child(3) {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  color: #f6b300;
+  text-decoration: none;
 }
 
 /* RESPONSIVE */
