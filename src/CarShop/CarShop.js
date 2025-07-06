@@ -11,6 +11,7 @@ import Product from './Component/PRODUCT/Product'
 import Present from './Component/PRESENT/Present'
 import DatHang from './Component/DATHANG/DatHang'
 import HeaderFixed from './Component/HEADERFIXED/HeaderFixed'
+import Icon from './Component/ICON/icon'
 
 
 
@@ -29,6 +30,7 @@ export default function CarShop() {
             <Present />
             <Product />
             <Footer />
-        </div>
+            <Icon />
+        </div >
     )
 }

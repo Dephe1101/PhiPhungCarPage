@@ -8,10 +8,10 @@ export default function Footer() {
                     <div className="col-12 col-lg-6 ">
                         <h3 className=''>ĐẠI LÝ PHÂN PHỐI LẮP ĐẶT ZESTECH MIỀN NAM</h3>
                         <ul>
-                            <li className='footer-item'>Địa chỉ: 235 Trần Bình Trọng - P.4 - Q.5 - TP.HCM</li>
-                            <li className='footer-item'>Hotline: 0903836342</li>
-                            <li className='footer-item'>Email: autoquangdieu@gmail.com</li>
-                            <li className='footer-item'> Kênh Youtube: Auto Quang Diệu</li>
+                            <li className='footer-item'>Địa chỉ: 1031 Trường Chinh - Phường Hội Phú - Tinh Gia Lai</li>
+                            <li className='footer-item'>Hotline: 038 449 3353</li>
+                            <li className='footer-item'>Email: truongphiphung91@gmail.com</li>
+                            <li className='footer-item'> Kênh Youtube: Phố Núi Auto</li>
                         </ul>
                     </div>
                     <div className="col-12 col-lg-3">
@@ -28,16 +28,14 @@ export default function Footer() {
                     </div>
                     <div className="col-12 col-lg-3">
                         <h3>FANPAGE</h3>
-                        <div className=''>
-                            <iframe src='https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/dochoioto.net'>
+                        <div >
+                            <iframe src='https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/phungptchinhhang' style={{ width: "112%" }}>
                             </iframe>
                         </div>
                     </div>
 
                 </div>
-                <div className="footer__copyright">
-                    <p className="pt-4">© 2022 Bản quyền thuộc Zestech.com.vn</p>
-                </div>
+
             </div>
         </footer>
     )

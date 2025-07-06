@@ -15,6 +15,7 @@ import Table from './CarShop/PAGE/TABLE/Table';
 import Register from './CarShop/Component/REGISTER/Register';
 import { ToastContainer } from 'react-toastify';
 import PhuKienPage from './CarShop/PAGE/PhuKien/PhuKien';
+import Icon from './CarShop/Component/ICON/icon';
 
 
 
@@ -39,6 +40,7 @@ function App() {
             <Carousel />
             <ManHinh />
             <Footer />
+            <Icon />
           </div>
         }} />
         <Route exact path='/phukien' Component={() => {
@@ -48,6 +50,7 @@ function App() {
             <Carousel />
             <PhuKienPage />
             <Footer />
+            <Icon />
           </div>
         }} />
         <Route exact path='/locnhot' Component={() => {
@@ -57,6 +60,7 @@ function App() {
             <Carousel />
             <CameraPage />
             <Footer />
+            <Icon />
           </div>
         }} />
         <Route exact path='/detailing' Component={() => {
@@ -65,6 +69,7 @@ function App() {
             <Carousel />
             <Den />
             <Footer />
+            <Icon />
           </div>
         }} />
         {/* <Route exact path='/gioithieu' Component={() => {

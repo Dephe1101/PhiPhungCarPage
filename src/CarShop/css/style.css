@@ -822,6 +822,19 @@ p {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+
+.icon_youtube {
+  background: white;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: tada_keyframe;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: phone_call;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 .icon_messager {
   background: #e60f1e;
   -webkit-animation-duration: 1s;
@@ -1223,4 +1236,51 @@ bdi {
 .border-\[\#ffe200\] {
   border-color: rgb(255 226 0) !important;
   overflow: hidden;
+}
+
+.icon_left {
+  text-align: center;
+  width: 45px;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 9999;
+}
+.icon_left a {
+  display: block;
+  width: 45px;
+  margin: 14px 0;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px #888;
+  height: 45px;
+  line-height: 26px;
+}
+
+.icon_left .icon_like {
+  display: block;
+  width: 45px;
+  margin: 14px 0;
+  padding: 0px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px #888;
+  height: 45px;
+  line-height: 26px;
+  border-color: transparent;
+}
+.icon_left a img {
+  max-width: 100%;
+  height: auto;
+}
+.icon_left .icon_phone {
+  background: #19305a;
+}
+.icon_left .icon_zalo {
+  background: #0084ff;
+}
+.icon_messager {
+  background: #0084ff;
+}
+.icon_youtube {
+  background: white;
 }
