@@ -123,7 +123,7 @@ export default function Form({ open, onClose, onSave, initialData }) {
                         <MenuItem value="phutung">Phụ tùng</MenuItem>
                         <MenuItem value="phukien">Phụ kiện</MenuItem>
                         <MenuItem value="detail">Detail</MenuItem>
-                        <MenuItem value="locnhot">Lọc nhớt</MenuItem>
+                        <MenuItem value="daituxe">Đại tu xe</MenuItem>
                     </Select>
                     <TextField
                         label="Giá Tiền"

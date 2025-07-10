@@ -17,13 +17,13 @@ const Icon = () => {
           <img loading="lazy" src={require("../../img/i_zalo.png")} alt="" />
         </a>
         <a
-          class="icon_messager"
-          href="https://www.facebook.com/messages/e2ee/t/7506667089420950"
+          class="icon_youtube"
+          href="https://www.facebook.com/phungdochoioto.vn"
           rel="nofollow"
           target="_blank">
           <img
             loading="lazy"
-            src={require("../../img/i_messenger.png")}
+            src={require("../../img/i_facebook.png")}
             alt=""
           />
         </a>

@@ -103,8 +103,10 @@ export default function Den() {
                 <div className="card text-start mb-5" style={{ backgroundColor: "transparent", border: "none" }}>
                     <img className="card-img-top" src={item.hinhAnh} alt="Title" />
                     <div className="card-body">
-                        <h4 className="card-title">{item.tenSP}</h4>
-                        <p className='text-center' >{item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353" style={{ textDecoration: "none" }}>Liên Hệ</a>}</p>
+                        <p className="card-text">{item.tenSP}</p>
+                        <p className="card-text">Mã sản phẩm: <span>{item.maSP}</span></p>
+                        {item.giaTien != '0' ? <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} VND</p> : <a href="tel:0384493353">Liên Hệ</a>}
+                        <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                     </div>
                 </div>
             </div>;

@@ -58,7 +58,7 @@ export default function DatHang() {
                                             <div className="product_info-bottom bg-white pt-3 md:px-0 px-3">
                                                 <a
                                                     href="#"
-                                                    className="product_name block !font-semibold leading-[27px] md:mb-5 mb-2"
+                                                    className="product_name block !font-semibold leading-[27px] md:mb-5 mb-2  "
                                                     tabIndex={0}>
                                                     {item.tenSP}
                                                 </a>
@@ -75,7 +75,10 @@ export default function DatHang() {
                                                         </bdi>
                                                     </span>
                                                 </div>
-                                                <div
+                                                <div className="product_sku text-sm text-[#3f4045] font-bold mt-2">
+                                                    Mã sản phẩm: <span className="text-gray">{item.maSP}</span>
+                                                </div>
+                                                {/* <div
                                                     className="relative mt-[30px] h-2 rounded-[30px]"
                                                     style={{ backgroundColor: "#e0e0e0" }}>
                                                     <div
@@ -86,7 +89,7 @@ export default function DatHang() {
                                                                 "linear-gradient(90deg, rgba(255, 192, 0, 1), rgba(255, 0, 0, 1) 100%)",
                                                         }}
                                                     />
-                                                </div>
+                                                </div> */}
                                                 {/* <div className="text-[#3f4045] text-[10px] font-bold mt-4 mb-2.5 uppercase">
                                                     <span className="d-inline-block">35% Sold </span>-
                                                     Available: 11{" "}

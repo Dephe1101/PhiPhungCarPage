@@ -117,8 +117,8 @@ export default function ShowTime() {
             </div>
         })
     }
-    const renderLocNhot = () => {
-        return state.list?.filter(product => product.loai === 'locnhot' && product.mucdohienthi === "product").map((item, index) => {
+    const renderDaiTuXe = () => {
+        return state.list?.filter(product => product.loai === 'daituxe' && product.mucdohienthi === "product").map((item, index) => {
             return <div className="mt-1 p-2 col-md-3 col-4" key={index}>
                 <div className='card__custom__img'>
                     <img src={item.hinhAnh} className="card-img-top img-fluid" alt="..." style={{ width: '100%', height: "100%" }} />
@@ -199,7 +199,7 @@ export default function ShowTime() {
                 <div class="container-md mb-5">
                     <h2 className='title text-center'> PHỤ KIỆN ĐỒ CHƠI XE</h2>
                     <div className='show__time__item row'>
-                        {renderLocNhot()}
+                        {renderPhuKien()}
                     </div>
                     <div className='text-center'>
                         <button className='btn btn-primary'>
@@ -212,21 +212,7 @@ export default function ShowTime() {
                     </div>
                 </div>
 
-                <div class="container-md mb-5">
-                    <h2 className='title text-center'>LỌC VÀ NHỚT</h2>
-                    <div className='show__time__item row'>
-                        {renderPhuKien()}
-                    </div>
-                    <div className='text-center'>
-                        <button className='btn btn-primary'>
-                            <NavLink className="nav-link dropdown-item text-white "
-                                to="/locnhot"
-                            >
-                                Xem Thêm
-                            </NavLink>
-                        </button>
-                    </div>
-                </div>
+
 
                 <div class="container-md mb-5">
                     <h2 className='title text-center'>Detailing</h2>
@@ -237,6 +223,22 @@ export default function ShowTime() {
                         <button className='btn btn-primary'>
                             <NavLink className="nav-link dropdown-item text-white "
                                 to="/detailing"
+                            >
+                                Xem Thêm
+                            </NavLink>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container-md mb-5">
+                    <h2 className='title text-center'>Đại Tu Xe</h2>
+                    <div className='show__time__item row'>
+                        {renderDaiTuXe()}
+                    </div>
+                    <div className='text-center'>
+                        <button className='btn btn-primary'>
+                            <NavLink className="nav-link dropdown-item text-white "
+                                to="/locnhot"
                             >
                                 Xem Thêm
                             </NavLink>

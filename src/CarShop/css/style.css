@@ -996,6 +996,11 @@ p {
   color: #fff;
   box-shadow: none;
   text-decoration: none;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .mb-8 {
@@ -1182,6 +1187,8 @@ p {
 
 .datHang-item a {
   box-shadow: none;
+  font-size: 18px;
+  font-weight: 700;
   text-decoration: none;
   color: black;
 }
