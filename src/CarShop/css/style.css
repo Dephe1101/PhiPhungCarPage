@@ -698,6 +698,10 @@ p {
   #movieCarousel .carousel-indicators {
     bottom: 45px;
   }
+
+  .logo {
+    width: 80%;
+  }
   .show__time .nav-tabs .nav-link span {
     font-size: 6px;
     text-align: left;
@@ -748,6 +752,9 @@ p {
   .card-body .card-text {
     font-size: 10px;
     margin-bottom: 2px;
+  }
+  .card-body .card-text span {
+    font-size: 10px;
   }
   .card-body .card-title {
     font-size: 10px;

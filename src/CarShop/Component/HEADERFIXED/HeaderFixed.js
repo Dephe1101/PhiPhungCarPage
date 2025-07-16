@@ -7,7 +7,7 @@ export default function HeaderFixed() {
             <nav className="navbar navbar-expand-md">
                 <div className="container">
                     <div className='logo' style={{ background: "#ffc000", alignSelf: "center" }}>
-                        <img src={require("../../img/logo-header.jpg")} />
+                        <img style={{ width: "80%" }} src={require("../../img/logo-header.jpg")} />
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#movieCyber" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon">

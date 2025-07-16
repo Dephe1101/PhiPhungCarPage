@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row pt-5 ">
                     <div className="col-12 col-lg-6 ">
-                        <h3 className=''>ĐẠI LÝ PHÂN PHỐI LẮP ĐẶT ZESTECH MIỀN NAM</h3>
+                        <h3 className=''>Phụng Genuine Parts</h3>
                         <ul>
                             <li className='footer-item'>Địa chỉ: 1031 Trường Chinh - Phường Hội Phú - Tinh Gia Lai</li>
                             <li className='footer-item'>Hotline: 038 449 3353</li>

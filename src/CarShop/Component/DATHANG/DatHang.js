@@ -62,21 +62,22 @@ export default function DatHang() {
                                                     tabIndex={0}>
                                                     {item.tenSP}
                                                 </a>
-                                                <div className="product_price text-base font-bold">
+
+                                                <div className="product_sku text-sm text-[#3f4045] font-bold mt-2">
+                                                    Mã sản phẩm: <span className="text-gray">{item.maSP}</span>
+                                                </div>
+                                                <div className="product_price text-base font-bold mt-4">
                                                     <span className="woocommerce-Price-amount amount">
                                                         <bdi>
                                                             <span className="woocommerce-Price-currencySymbol"></span>
                                                             {item.giaTien !== "0" ? item.giaTien.replace(
                                                                 /\B(?=(\d{3})+(?!\d))/g,
                                                                 "."
-                                                            ) + " VND" : <a href="tel:0384493353" style={{ color: "#f6b300" }}>Liên Hệ</a>}
+                                                            ) + " VND" : <a href="tel:0384493353" style={{ color: "#f6b300", display: "block", textAlign: "center" }}>Liên Hệ</a>}
 
 
                                                         </bdi>
                                                     </span>
-                                                </div>
-                                                <div className="product_sku text-sm text-[#3f4045] font-bold mt-2">
-                                                    Mã sản phẩm: <span className="text-gray">{item.maSP}</span>
                                                 </div>
                                                 {/* <div
                                                     className="relative mt-[30px] h-2 rounded-[30px]"
